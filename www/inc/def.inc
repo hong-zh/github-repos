@@ -41,6 +41,8 @@ define ('CURL_USER_AGENT', 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0)
 
 define ('CURL_HEAD_CHARSET', "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7"); 
 define ('CURL_HEAD_ACCEPT', 'Accept: application/vnd.github.v3+json');  // Accept return data in jason format.
+
+    // Seems my own token won't be allowd in github repo, it's been removed.
 define ('CURL_HEAD_AUTH', 'Authorization: token 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');  // My own access token at github.
 define ('GH_SEARCH_URL_PART1', 'https://api.github.com/search/repositories');   // 1st part of request url.
 

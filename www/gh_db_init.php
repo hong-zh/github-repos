@@ -17,7 +17,7 @@ error_reporting(-1);
 */
 
 
-require_once ("../init_vars.inc");
+require_once ("init_vars.inc");
 
 /*
 include_once ("../inc/db_test.inc");
@@ -218,8 +218,10 @@ function gh_extract_star_ranges ($min, $max)
         else
             $gh_url = GH_SEARCH_URL_PART1 . GH_SEARCH_URL_PART2 . GH_STAR_MAX . GH_SEARCH_URL_PART3 . GH_RESULTS_PER_PAGE . GH_SEARCH_URL_PART4 . $page_start;
 
+            // Didn't add Auth token into header, since github removed the access token.
+            // 
         $gh_header = array (
-            CURL_HEAD_ACCEPT, CURL_HEAD_AUTH, CURL_HEAD_CHARSET
+            CURL_HEAD_ACCEPT, CURL_HEAD_CHARSET
         );
 
         if ( DEBUG )
@@ -264,6 +266,8 @@ echo "\n";
         }
 
             // Remaining # of requests for this hour.
+            // Depending on calling web interface or CLI, this header tag may or may not be present.
+            // So it is not a reliable variable.
 	if ( defined ($headers_arr['X-RateLimit-Remaining']) )
 	    $limit_remain = $headers_arr['X-RateLimit-Remaining'];
 
@@ -403,8 +407,12 @@ function gh_store_repo_info ($info)
 //echo $query, "\n";
     $result = mysqli_query ($db_gh, $query);
 
+
+    // Keep silent.
+/*
     if ( FALSE === $result )
         echo "Failed inserting github repo info: " . mysqli_error ($db_gh);
+*/
 //    echo "Succeeded storing github repo info. id: ", mysqli_insert_id($db_gh) , "\n";
 }
 

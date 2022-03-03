@@ -1,4 +1,4 @@
-#  LAMP stack built with Docker Compose
+#  The mosted starred github reps using LAMP stack built with Docker Compose
 
 ![Landing Page](https://github.com/hong-zh/github-repos.git)
 
@@ -34,7 +34,7 @@ git clone https://github.com/sprintcube/docker-compose-lamp.git
 cd github-repos/
 // modify .env as needed
 docker-compose up -d
-// visit http://localhost
+point browser to: http://localhost
 ```
 
 * To re-load a fresh copy of github repos of the most starred, log in to the webser by:
@@ -44,7 +44,8 @@ php gh_db_init.php
 
 That will re-load a fresh copy of github most starred repos into local database.
 
-* To instal vim:
+* To instal vim on webserver:
+
 apt-get update
 apt-get install vim
 
