@@ -242,7 +242,7 @@ _GetGPCData_ ($key)
     // Perform additional treatment to each element in input array.
     for ( $count = 0; $count < count ($input); $count++ )
     {
-        if ( $quotStat )
+//        if ( $quotStat )
             // It's on, so we need to un-escape user input from web form.
             $input[$count] = stripslashes( $input[$count] );
 
