@@ -51,6 +51,9 @@ $start_time = time();   // UNIX timestamp in seconds.
     // Main processing flow.
     //______________________________________________________________
 
+echo "<h3>", "<a href="index.php">View repo information</a><BR><BR>\n";
+
+
 //gh_drop_gh_table ();    // Drop existing table, to start freshly.
 gh_create_gh_db ();     // To be on safe side, create database anyway if not exist yet.
 gh_create_gh_table ();  // Create the repo table.
